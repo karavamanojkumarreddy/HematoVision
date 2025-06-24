@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HematoVision: Interactive Project Overview</title>
+    
+    <!-- Placeholder Comments -->
+    <!-- Chosen Palette: "Clinical Tech Blue" - A professional and clean palette using a light slate background, a primary blue for headings and interactive elements, and dark grays for text to ensure readability and a modern, tech-focused feel appropriate for a medical AI project. -->
+    <!-- Application Structure Plan: A single-page, vertical scrolling layout with a sticky top navigation bar. This structure allows users to get a quick overview from the navigation and then dive into specific sections with a smooth scroll, which is more engaging than a static page. The sections logically group the README content into thematic areas: Overview, Features, Technology, How it Works, and Future Vision. This flow guides the user from the "what" and "why" to the "how" and "what's next," providing a comprehensive understanding in an intuitive manner. -->
+    <!-- Visualization & Content Choices: 
+        - Report Info: Project Overview -> Goal: Inform -> Presentation: Hero section with a clear summary -> Interaction: Static -> Justification: Immediately establishes the project's purpose.
+        - Report Info: Key Features -> Goal: Inform/Organize -> Presentation: Grid layout with icons -> Interaction: Static -> Justification: Visually breaks down key selling points for quick scanning.
+        - Report Info: Dataset Composition (inferred from "IIC PROJECT.pdf") -> Goal: Compare/Inform -> Viz: Bar Chart -> Interaction: Hover for details -> Justification: A Chart.js bar chart provides a clear, quantitative visualization of the dataset balance, a key technical detail not explicitly visualized in the README. Library: Chart.js.
+        - Report Info: Technologies Used -> Goal: Inform -> Presentation: Tag-like list -> Interaction: Static -> Justification: Easy-to-read, modern presentation of the tech stack.
+        - Report Info: Setup, Structure, Run -> Goal: Organize/Inform -> Presentation: Tabbed interface -> Interaction: Click to switch tabs, click to copy code -> Justification: Condenses dense technical information into manageable, user-selectable chunks, preventing a long wall of text.
+        - Report Info: Future Enhancements -> Goal: Inform -> Presentation: A clean, forward-looking list -> Interaction: Static -> Justification: Clearly outlines the project roadmap.
+    -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* slate-50 */
+        }
+        .section-active {
+            color: #2563eb; /* blue-600 */
+            font-weight: 600;
+            position: relative;
+        }
+        .section-active::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #2563eb;
+        }
+        .tab-active {
+            background-color: #3b82f6; /* blue-500 */
+            color: #ffffff;
+        }
+        .tab-inactive {
+            background-color: #e5e7eb; /* gray-200 */
+            color: #374151; /* gray-700 */
+            transition: background-color 0.2s ease-in-out;
+        }
+        .tab-inactive:hover {
+            background-color: #d1d5db; /* gray-300 */
+        }
+        .code-block {
+            position: relative;
+        }
+        .copy-button {
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            padding: 0.25rem 0.5rem;
+            background-color: #4b5563; /* gray-600 */
+            color: white;
+            border: none;
+            border-radius: 0.25rem;
+            font-size: 0.75rem;
+            cursor: pointer;
+            opacity: 0.7;
+            transition: opacity 0.2s ease-in-out;
+        }
+        .code-block:hover .copy-button {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="text-slate-700">
+
+    <!-- Header & Navigation -->
+    <header class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 border-b border-slate-200">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#overview" class="text-xl font-bold text-blue-600">
+                🔬 HematoVision
+            </a>
+            <div class="hidden md:flex space-x-8 text-slate-600 font-medium">
+                <a href="#overview" class="nav-link hover:text-blue-600 transition-colors py-1">Overview</a>
+                <a href="#features" class="nav-link hover:text-blue-600 transition-colors py-1">Features</a>
+                <a href="#tech" class="nav-link hover:text-blue-600 transition-colors py-1">Technology</a>
+                <a href="#how-it-works" class="nav-link hover:text-blue-600 transition-colors py-1">How it Works</a>
+                <a href="#future" class="nav-link hover:text-blue-600 transition-colors py-1">Future Vision</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+
+        <!-- Section: Overview -->
+        <section id="overview" class="text-center py-16 md:py-24 scroll-mt-20">
+            <h1 class="text-4xl md:text-5xl font-bold text-slate-800 mb-4">Advanced Blood Cell Classification with AI</h1>
+            <p class="max-w-3xl mx-auto text-lg text-slate-600">
+                HematoVision is an innovative AI-powered web application designed for the precise and efficient classification of blood cells. This project aims to assist pathologists and healthcare professionals in rapid diagnostics and research by automatically identifying different types of blood cells from uploaded images.
+            </p>
+             <div class="mt-8">
+                <p class="text-sm text-slate-500">Developed as part of the <span class="font-semibold text-blue-600">Smart Bridge Internship Program</span>.</p>
+            </div>
+        </section>
+
+        <!-- Section: Features -->
+        <section id="features" class="py-16 md:py-24 scroll-mt-20">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-slate-800">Key Features</h2>
+                <p class="text-slate-600 mt-2">Core functionalities that make HematoVision powerful and efficient.</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-200">
+                    <h3 class="text-lg font-semibold text-blue-600 mb-2">Accurate Classification</h3>
+                    <p>Utilizes a fine-tuned CNN for high accuracy in identifying various blood cell types.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-200">
+                    <h3 class="text-lg font-semibold text-blue-600 mb-2">Transfer Learning</h3>
+                    <p>Employs the MobileNetV2 architecture to ensure efficient training and robust performance.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-200">
+                    <h3 class="text-lg font-semibold text-blue-600 mb-2">Intuitive Web Interface</h3>
+                    <p>A user-friendly web app built with Flask for easy image uploads and result viewing.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-200">
+                    <h3 class="text-lg font-semibold text-blue-600 mb-2">Real-time Feedback</h3>
+                    <p>Provides immediate predictions, including class and confidence score, upon submission.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-200">
+                    <h3 class="text-lg font-semibold text-blue-600 mb-2">Scalable Approach</h3>
+                    <p>The underlying deep learning model is designed to be efficient for practical application.</p>
+                </div>
+                 <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-200">
+                    <h3 class="text-lg font-semibold text-blue-600 mb-2">Open Source Stack</h3>
+                    <p>Built entirely on powerful and widely-used open source technologies.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Technology Stack & Dataset Visualization -->
+        <section id="tech" class="py-16 md:py-24 scroll-mt-20">
+            <div class="grid lg:grid-cols-5 gap-12 items-center">
+                <div class="lg:col-span-2">
+                     <h2 class="text-3xl font-bold text-slate-800 mb-4">Technology & Data</h2>
+                     <p class="text-slate-600 mb-6">This project is built on a foundation of robust, open-source technologies. The model was trained on a balanced dataset of blood cell images, which is crucial for achieving unbiased classification performance.</p>
+                     <div class="flex flex-wrap gap-2">
+                        <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">Python</span>
+                        <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">TensorFlow</span>
+                        <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">Keras</span>
+                        <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">Flask</span>
+                        <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">NumPy</span>
+                        <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">Pandas</span>
+                        <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">OpenCV</span>
+                     </div>
+                </div>
+                <div class="lg:col-span-3">
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-200">
+                        <h3 class="text-lg font-semibold text-center mb-4">Training Dataset Composition</h3>
+                        <div class="chart-container" style="position: relative; height:350px; width:100%; max-width: 600px; margin: auto;">
+                            <canvas id="datasetChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: How it Works -->
+        <section id="how-it-works" class="py-16 md:py-24 scroll-mt-20">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-slate-800">How It Works</h2>
+                <p class="text-slate-600 mt-2">From setup to execution, here's a look under the hood.</p>
+            </div>
+            <div class="max-w-4xl mx-auto">
+                <div class="mb-4 flex justify-center border-b border-slate-200">
+                    <button class="tab-button tab-active py-2 px-6 font-medium text-sm rounded-t-lg" onclick="openTab(event, 'Setup')">Setup</button>
+                    <button class="tab-button tab-inactive py-2 px-6 font-medium text-sm rounded-t-lg" onclick="openTab(event, 'Structure')">Project Structure</button>
+                    <button class="tab-button tab-inactive py-2 px-6 font-medium text-sm rounded-t-lg" onclick="openTab(event, 'Run')">Run Application</button>
+                </div>
+                <div class="bg-white p-6 rounded-b-lg rounded-tr-lg shadow-sm border border-slate-200">
+                    <div id="Setup" class="tab-content">
+                        <h3 class="text-xl font-semibold mb-4">Setup Instructions</h3>
+                        <div class="space-y-4 text-slate-700">
+                            <div><strong>1. Prerequisites:</strong> Ensure you have Anaconda Navigator and Git installed.</div>
+                            <div>
+                                <strong>2. Create Conda Environment:</strong>
+                                <div class="code-block mt-2">
+                                    <pre class="bg-slate-800 text-white p-4 rounded-md text-sm"><code>conda create -n hemato_env python=3.9\nconda activate hemato_env</code></pre>
+                                    <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                                </div>
+                            </div>
+                            <div>
+                                <strong>3. Install Dependencies:</strong>
+                                 <p class="text-sm my-1">Create a `requirements.txt` file and run the following command:</p>
+                                <div class="code-block mt-2">
+                                    <pre class="bg-slate-800 text-white p-4 rounded-md text-sm"><code>pip install -r requirements.txt</code></pre>
+                                     <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="Structure" class="tab-content" style="display:none">
+                         <h3 class="text-xl font-semibold mb-4">Project Directory Structure</h3>
+                         <div class="code-block mt-2">
+                            <pre class="bg-slate-800 text-white p-4 rounded-md text-sm leading-relaxed"><code>HematoVision/
+├── app.py              # Flask web application
+├── trained_model.h5    # The trained ML model
+├── requirements.txt    # Python dependencies
+├── static/             # For uploaded images
+├── templates/
+│   ├── index.html
+│   └── result.html
+└── README.md           # Project documentation</code></pre>
+                        </div>
+                    </div>
+                    <div id="Run" class="tab-content" style="display:none">
+                        <h3 class="text-xl font-semibold mb-4">Running the Application</h3>
+                        <div class="space-y-4 text-slate-700">
+                            <div><strong>1. Navigate to Directory:</strong>
+                                <div class="code-block mt-2">
+                                    <pre class="bg-slate-800 text-white p-4 rounded-md text-sm"><code>cd C:\HematoVision</code></pre>
+                                    <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                                </div>
+                            </div>
+                            <div>
+                                <strong>2. Activate Environment:</strong>
+                                <div class="code-block mt-2">
+                                    <pre class="bg-slate-800 text-white p-4 rounded-md text-sm"><code>conda activate hemato_env</code></pre>
+                                    <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                                </div>
+                            </div>
+                            <div>
+                                <strong>3. Start the Flask Server:</strong>
+                                <div class="code-block mt-2">
+                                    <pre class="bg-slate-800 text-white p-4 rounded-md text-sm"><code>python app.py</code></pre>
+                                    <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                                </div>
+                            </div>
+                             <div><strong>4. Access in Browser:</strong> Open a web browser and go to <a href="http://127.0.0.1:5000" target="_blank" class="text-blue-600 font-semibold">http://127.0.0.1:5000</a>.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+         <!-- Section: Future Vision -->
+        <section id="future" class="py-16 md:py-24 scroll-mt-20">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-slate-800">Future Vision</h2>
+                <p class="text-slate-600 mt-2">Potential enhancements to expand the project's capabilities.</p>
+            </div>
+            <div class="max-w-3xl mx-auto space-y-4">
+                <div class="bg-white p-4 rounded-lg shadow-sm border border-slate-200 flex items-center transition-transform hover:scale-105">
+                    <span class="text-blue-500 mr-4 text-xl">➔</span>
+                    <p><strong>Batch Prediction:</strong> Allow users to upload multiple images for simultaneous classification.</p>
+                </div>
+                 <div class="bg-white p-4 rounded-lg shadow-sm border border-slate-200 flex items-center transition-transform hover:scale-105">
+                    <span class="text-blue-500 mr-4 text-xl">➔</span>
+                    <p><strong>Detailed Reports:</strong> Generate downloadable PDF reports with classification results and probabilities.</p>
+                </div>
+                 <div class="bg-white p-4 rounded-lg shadow-sm border border-slate-200 flex items-center transition-transform hover:scale-105">
+                    <span class="text-blue-500 mr-4 text-xl">➔</span>
+                    <p><strong>Containerization:</strong> Package the application using Docker for easy, consistent deployment.</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-sm border border-slate-200 flex items-center transition-transform hover:scale-105">
+                    <span class="text-blue-500 mr-4 text-xl">➔</span>
+                    <p><strong>Cloud Deployment:</strong> Host the application on a public cloud platform like Heroku or AWS.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="bg-slate-800 text-slate-400 py-12">
+        <div class="container mx-auto px-6 text-center">
+            <h3 class="text-xl font-semibold text-white mb-4">The HematoVision Team</h3>
+            <div class="flex flex-wrap justify-center gap-x-8 gap-y-2 mb-6">
+                <span>Karava Manoj Kumar Reddy (Lead)</span>
+                <span>Karuturi Mahendranadh Chowdhury</span>
+                <span>Kolla Manikanta</span>
+                <span>Kulagiri Indu Priya</span>
+            </div>
+            <p class="text-sm">Contact: <a href="mailto:karavamanojkumarreddy@gmail.com" class="hover:text-white">karavamanojkumarreddy@gmail.com</a></p>
+            <p class="text-sm mt-4">&copy; 2025 HematoVision Project | Smart Bridge Internship</p>
+        </div>
+    </footer>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- Chart.js: Dataset Composition Chart ---
+            const ctx = document.getElementById('datasetChart');
+            if(ctx) {
+                new Chart(ctx.getContext('2d'), {
+                    type: 'bar',
+                    data: {
+                        labels: ['Eosinophil', 'Lymphocyte', 'Monocyte', 'Neutrophil'],
+                        datasets: [{
+                            label: '# of Training Images',
+                            data: [3133, 3119, 3097, 3123], // Approximate numbers from dataset description
+                            backgroundColor: [
+                                'rgba(59, 130, 246, 0.6)', // blue-500
+                                'rgba(16, 185, 129, 0.6)', // emerald-500
+                                'rgba(239, 68, 68, 0.6)',  // red-500
+                                'rgba(249, 115, 22, 0.6)'  // orange-500
+                            ],
+                            borderColor: [
+                                'rgba(59, 130, 246, 1)',
+                                'rgba(16, 185, 129, 1)',
+                                'rgba(239, 68, 68, 1)',
+                                'rgba(249, 115, 22, 1)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        maintainAspectRatio: false,
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                title: {
+                                    display: true,
+                                    text: 'Number of Images'
+                                }
+                            }
+                        },
+                        plugins: {
+                            legend: {
+                                display: false
+                            },
+                            tooltip: {
+                                callbacks: {
+                                    label: function(context) {
+                                        return ` ${context.dataset.label}: ${context.formattedValue}`;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+
+            // --- Active Navigation Link on Scroll ---
+            const sections = document.querySelectorAll("main section");
+            const navLinks = document.querySelectorAll("nav a.nav-link");
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '-50% 0px -50% 0px', // Activate when section is in vertical center
+                threshold: 0
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.getAttribute('id');
+                        navLinks.forEach(link => {
+                            link.classList.remove('section-active');
+                            if (link.getAttribute('href') === `#${id}`) {
+                                link.classList.add('section-active');
+                            }
+                        });
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+        
+        // --- Tabbed Interface for "How it Works" section ---
+        function openTab(event, tabName) {
+            const tabcontent = document.querySelectorAll(".tab-content");
+            tabcontent.forEach(tab => tab.style.display = "none");
+            
+            const tabbuttons = document.querySelectorAll(".tab-button");
+            tabbuttons.forEach(button => {
+                button.classList.remove('tab-active');
+                button.classList.add('tab-inactive');
+            });
+            
+            document.getElementById(tabName).style.display = "block";
+            event.currentTarget.classList.add('tab-active');
+            event.currentTarget.classList.remove('tab-inactive');
+        }
+        
+        // --- Copy to Clipboard for Code Blocks ---
+        function copyCode(button) {
+            const pre = button.previousElementSibling;
+            const code = pre.querySelector('code').innerText;
+            navigator.clipboard.writeText(code).then(() => {
+                button.innerText = 'Copied!';
+                button.style.backgroundColor = '#16a34a'; // green-600
+                setTimeout(() => {
+                    button.innerText = 'Copy';
+                    button.style.backgroundColor = '#4b5563'; // gray-600
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy text: ', err);
+                button.innerText = 'Error';
+                 setTimeout(() => {
+                    button.innerText = 'Copy';
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>
