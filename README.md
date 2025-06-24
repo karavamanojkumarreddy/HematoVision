@@ -90,29 +90,22 @@ pip install -r requirements.txt
 The project directory (C:\HematoVision) is organized as follows:
 
 HematoVision/
-app.py   
-# Flask web application logic
-trained_model.h5       
-# The pre-trained and fine-tuned ML model
-requirements.txt            
-# List of Python dependencies
-static/                         
-# Stores uploaded images for display
+# app.py   
+# trained_model.h5       
+# requirements.txt            
+# static/                         
 (uploaded images will go here)
-templates/
+# templates/
 index.html                 
-# Main page: Image upload form
 result.html               
-# Displays prediction results
-README_interactive_overview.html
-# Converted interactive README page
-dataset/                        # (Optional) Original dataset if included in repo
+# README_interactive_overview.html
+# dataset/
   └── (TRAIN, TEST, etc. folders)
-├── model/                          # (Optional) Could store models here if using subfolders
-├── scripts/                        # (Optional) Contains utility scripts
-│   └── train_model.py              # Script for data preprocessing and model training
-├── convert_readme.py               # Script to convert README.md to HTML
-└── README.md                       # This documentation file
+ # model/                         
+# scripts/                       
+  train_model.py              
+# convert_readme.py              
+# README.md                      
 
 🚀 How to Run the Application
 Ensure all setup steps are completed (prerequisites and installation).
