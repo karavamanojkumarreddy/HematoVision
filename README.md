@@ -90,9 +90,12 @@ pip install -r requirements.txt
 The project directory (C:\HematoVision) is organized as follows:
 
 HematoVision/
-├── app.py                          # Flask web application logic
-├── trained_model.h5                # The pre-trained and fine-tuned ML model
-├── requirements.txt                # List of Python dependencies
+├── app.py   
+# Flask web application logic
+├── trained_model.h5       
+# The pre-trained and fine-tuned ML model
+├── requirements.txt            
+# List of Python dependencies
 ├── static/                         # Stores uploaded images for display
 │   └── (uploaded images will go here)
 ├── templates/
