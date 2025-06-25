@@ -97,7 +97,8 @@ The project directory (C:\HematoVision) is organized as follows:
 # static/(uploaded images will go here)
 # templates/(index.html, result.html)             
 # dataset/(TRAIN, TEST, etc. folders)
- # model/(Classification Report)
+# model/(Classification Report)
+# plot
 # README.md                      
 🚀 How to Run the Application
 Ensure all setup steps are completed (prerequisites and installation).
