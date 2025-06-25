@@ -90,24 +90,15 @@ pip install -r requirements.txt
 📂 Project Structure
 The project directory (C:\HematoVision) is organized as follows:
 
-HematoVision/
+# HematoVision/
 # app.py   
 # trained_model.h5       
 # requirements.txt            
-# static/                         
-  └── (uploaded images will go here)
-# templates/
-     └── index.html                 
-     └──result.html               
-# README_interactive_overview.html
-# dataset/
-  └── (TRAIN, TEST, etc. folders)
- # model/                         
-# scripts/                       
-  train_model.py              
-# convert_readme.py              
+# static/(uploaded images will go here)
+# templates/(index.html, result.html)             
+# dataset/(TRAIN, TEST, etc. folders)
+ # model/(Classification Report)
 # README.md                      
-
 🚀 How to Run the Application
 Ensure all setup steps are completed (prerequisites and installation).
 
