@@ -1,0 +1,223 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HematoVision Project Documentation</title>
+    <!-- CORRECTED SCRIPT AND LINK TAGS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- END CORRECTED SCRIPT AND LINK TAGS -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* slate-50 */
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        .content-wrapper {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3, h4, h5, h6 {
+            color: #2563eb; /* blue-600 */
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+            font-weight: 700;
+        }
+        h1 { font-size: 2.25rem; }
+        h2 { font-size: 1.875rem; }
+        h3 { font-size: 1.5rem; }
+        a {
+            color: #3b82f6; /* blue-500 */
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        pre {
+            background-color: #1f2937; /* gray-800 */
+            color: white;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+            font-family: 'Fira Code', monospace; /* or 'Consolas', 'Monaco' */
+            font-size: 0.875rem;
+            line-height: 1.4;
+            margin-bottom: 1rem;
+        }
+        code {
+            background-color: #e2e8f0; /* slate-200 */
+            color: #1e293b; /* slate-900 */
+            padding: 0.2em 0.4em;
+            border-radius: 0.25rem;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.875rem;
+        }
+        ul {
+            list-style: disc;
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        ol {
+            list-style: decimal;
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        li {
+            margin-bottom: 0.5rem;
+        }
+        p {
+            margin-bottom: 1rem;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem auto;
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="content-wrapper">
+        <p>🔬 HematoVision: Advanced Blood Cell Classification
+✨ Project Overview
+HematoVision is an innovative AI-powered web application designed for the precise and efficient classification of blood cells. Leveraging advanced deep learning techniques, particularly transfer learning, this project aims to assist pathologists and healthcare professionals in rapid diagnostics and research by automatically identifying different types of blood cells from uploaded images.</p>
+<p>This project was developed as part of the Smart Bridge Internship Program, focusing on applying Artificial Intelligence in the healthcare domain.</p>
+<p>🌟 Key Features
+Accurate Classification: Utilizes a fine-tuned CNN for high accuracy in identifying various blood cell types.</p>
+<p>Transfer Learning: Employs the MobileNetV2 architecture to ensure efficient training and robust performance.</p>
+<p>Intuitive Web Interface: A user-friendly web app built with Flask for easy image uploads and result viewing.</p>
+<p>Real-time Feedback: Provides immediate predictions, including class and confidence score, upon submission.</p>
+<p>Scalable Approach: The underlying deep learning model is designed to be efficient for practical application.</p>
+<p>Open Source Stack: Built entirely on powerful and widely-used open source technologies.</p>
+<p>🚀 Technologies Used
+Python 3.x: The core programming language for the entire project.</p>
+<p>TensorFlow &amp; Keras: Deep Learning framework for model building, training, and prediction.</p>
+<p>NumPy: Essential for numerical operations and array manipulation.</p>
+<p>Pandas: Used for data handling and manipulation (e.g., creating DataFrames for image paths and labels).</p>
+<p>Matplotlib &amp; Seaborn: For data visualization, especially for plotting training history (accuracy, loss) and potentially confusion matrices.</p>
+<p>OpenCV (cv2): For image processing tasks (reading, resizing, color conversion).</p>
+<p>Flask: A lightweight Python web framework for building the user interface and handling web requests.</p>
+<p>Pillow (PIL): Used for image handling and manipulation.</p>
+<p>🛠️ Setup Instructions
+Follow these steps to get a local copy of the project up and running on your machine.</p>
+<p>Prerequisites
+Anaconda Navigator: Recommended for managing Python environments and packages. Download from Anaconda Website.</p>
+<p>Git: Version control system. Download from Git SCM.</p>
+<p>Installation
+Clone the Repository (or Download Project Files):
+If this were a Git repository, you would clone it:</p>
+<p>git clone https://github.com/yourusername/HematoVision.git
+cd HematoVision</p>
+<p>Since you have the files locally, ensure all project files are organized in a single root folder, e.g., C:\HematoVision.</p>
+<p>Initialize Git Repository (If not cloned):
+If you've downloaded files manually, navigate to your project folder in Anaconda Prompt and run:</p>
+<p>git init</p>
+<h1>Configure your Git identity (one-time setup)</h1>
+<p>git config --global user.email "your.email@example.com"
+git config --global user.name "Your Name"</p>
+<p>Create a Dedicated Conda Environment (Recommended):
+Open Anaconda Prompt (as Administrator) and create a new environment to avoid dependency conflicts:</p>
+<p>conda create -n hemato_env python=3.9  # Or your preferred Python version (e.g., 3.8, 3.10)
+conda activate hemato_env</p>
+<p>Install Required Python Packages:
+With your environment activated, install all necessary libraries. It's best practice to use a requirements.txt file for this.
+First, create requirements.txt in your C:\HematoVision folder with these contents:</p>
+<p>tensorflow==2.x.x # Use the exact version you trained your model with, e.g., 2.10.0
+keras # If you explicitly installed standalone Keras, otherwise tensorflow handles tf.keras
+numpy
+pandas
+scikit-learn
+matplotlib
+scipy
+seaborn
+Flask
+opencv-python
+Pillow # Required for PIL.Image
+markdown # For README conversion script</p>
+<p>Then, install them:</p>
+<p>pip install -r requirements.txt</p>
+<p>📂 Project Structure
+The project directory (C:\HematoVision) is organized as follows:</p>
+<p>HematoVision/
+├── app.py                          # Flask web application logic
+├── trained_model.h5                # The pre-trained and fine-tuned ML model
+├── requirements.txt                # List of Python dependencies
+├── static/                         # Stores uploaded images for display
+│   └── (uploaded images will go here)
+├── templates/
+│   ├── index.html                  # Main page: Image upload form
+│   ├── result.html                 # Displays prediction results
+│   └── README_interactive_overview.html # Converted interactive README page
+├── dataset/                        # (Optional) Original dataset if included in repo
+│   └── (TRAIN, TEST, etc. folders)
+├── model/                          # (Optional) Could store models here if using subfolders
+├── scripts/                        # (Optional) Contains utility scripts
+│   └── train_model.py              # Script for data preprocessing and model training
+├── convert_readme.py               # Script to convert README.md to HTML
+└── README.md                       # This documentation file</p>
+<p>🚀 How to Run the Application
+Ensure all setup steps are completed (prerequisites and installation).</p>
+<p>Place your trained model file (trained_model.h5) directly in the C:\HematoVision root directory, next to app.py.</p>
+<p>Generate the Interactive Project Overview HTML:
+Run the conversion script to create templates/README_interactive_overview.html:</p>
+<p>python convert_readme.py</p>
+<p>Open Anaconda Prompt (as Administrator).</p>
+<p>Navigate to your project's root directory:</p>
+<p>cd C:\HematoVision</p>
+<p>Activate your Conda environment:</p>
+<p>conda activate hemato_env # Or whatever you named your environment</p>
+<p>Start the Flask application:</p>
+<p>python app.py</p>
+<p>You should see output similar to this, indicating the server is running and the model loaded:</p>
+<p>✅ Model loaded successfully from C:\HematoVision\trained_model.h5
+* Serving Flask app 'app'
+* Debug mode: on
+* Running on all addresses (0.0.0.0)
+* Running on http://127.0.0.1:5000
+* Running on http://YOUR_LOCAL_IP:5000
+Press CTRL+C to quit</p>
+<p>💻 Usage
+Once the Flask application is running, open your web browser:</p>
+<p>Blood Cell Classification Tool:</p>
+<p>Go to http://127.0.0.1:5000/ (for access from your local machine).</p>
+<p>If running on 0.0.0.0, others on your same local network can access it using your computer's local IP address (e.g., http://192.168.1.100:5000/).</p>
+<p>On the page, click "Choose File", select a blood cell image (JPEG or PNG), and click "Classify Image" to see the prediction.</p>
+<p>Interactive Project Overview (README):</p>
+<p>Go to http://127.0.0.1:5000/project-overview in your browser.</p>
+<p>This page provides a comprehensive, interactive overview of the project's details, features, and technical aspects.</p>
+<p>🔮 Future Enhancements
+Advanced UI/UX: Implement more dynamic and visually engaging elements using JavaScript frameworks, potentially integrating a progress bar for uploads/predictions.</p>
+<p>Model Management: Develop features for easily updating the model or comparing different model versions.</p>
+<p>Batch Prediction: Allow users to upload multiple images for classification at once.</p>
+<p>Detailed Reports: Generate comprehensive reports for classification results, including probabilities for all classes.</p>
+<p>Containerization: Package the application using Docker for easier deployment and environment consistency.</p>
+<p>Cloud Deployment: Host the application on a public cloud platform (e.g., Heroku, AWS, GCP) for public accessibility and scalability.</p>
+<p>🤝 Contributing
+We welcome contributions to the HematoVision project! If you have suggestions or improvements, please feel free to open an issue or submit a pull request (if this were a Git repo).</p>
+<p>📄 License
+This project is licensed under the MIT License - see the LICENSE file for details (if you create one).</p>
+<p>📧 Contact
+Project Lead: Karava Manoj Kumar Reddy
+Team Members:</p>
+<p>Karuturi Mahendranadh Chowdhury</p>
+<p>Kolla Manikanta</p>
+<p>Kulagiri Indu Priya
+Email: karavamanojkumarreddy@gmail.com
+Smart Bridge Internship: [Link to Smart Bridge Platform or Project Page, if applicable]</p>
+<p>Developed as part of the Smart Bridge AI Internship Program.</p>
+    </div>
+</body>
+</html>
