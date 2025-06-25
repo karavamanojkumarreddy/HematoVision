@@ -57,8 +57,8 @@ If you've downloaded files manually, navigate to your project folder in Anaconda
 
 git init
 # Configure your Git identity (one-time setup)
-git config --global user.email "your.email@example.com"
-git config --global user.name "Your Name"
+git config --global user.email "karavamanojkumarreddy@gmail.com"
+git config --global user.name "KARAVA MANOJ KUMAR REDDY"
 
 Create a Dedicated Conda Environment (Recommended):
 Open Anaconda Prompt (as Administrator) and create a new environment to avoid dependency conflicts:
