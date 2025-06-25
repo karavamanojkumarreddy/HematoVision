@@ -5,7 +5,7 @@ HematoVision is an innovative AI-powered web application designed for the precis
 
 This project was developed as part of the Smart Bridge Internship Program, focusing on applying Artificial Intelligence in the healthcare domain.
 
-🌟 Key Features
+# 🌟 Key Features
 Accurate Classification: Utilizes a fine-tuned CNN for high accuracy in identifying various blood cell types.
 
 Transfer Learning: Employs the MobileNetV2 architecture to ensure efficient training and robust performance.
@@ -95,10 +95,10 @@ HematoVision/
 # trained_model.h5       
 # requirements.txt            
 # static/                         
-(uploaded images will go here)
+  └── (uploaded images will go here)
 # templates/
-index.html                 
-result.html               
+     └── index.html                 
+     └──result.html               
 # README_interactive_overview.html
 # dataset/
   └── (TRAIN, TEST, etc. folders)
@@ -179,15 +179,9 @@ We welcome contributions to the HematoVision project! If you have suggestions or
 This project is licensed under the MIT License - see the LICENSE file for details (if you create one).
 
 📧 Contact
-Project Lead: Karava Manoj Kumar Reddy
-Team Members:
-
-Karuturi Mahendranadh Chowdhury
-
-Kolla Manikanta
-
-Kulagiri Indu Priya
-Email: karavamanojkumarreddy@gmail.com
-Smart Bridge Internship: [Link to Smart Bridge Platform or Project Page, if applicable]
+# Project Lead: Karava Manoj Kumar Reddy
+# Team Members: Kolla Manikanta, Kulagiri Indu Priya and Karuturi Mahendranadh Chowdhury
+# Email: karavamanojkumarreddy@gmail.com
+Smart Bridge Internship: [https://apsche.smartinternz.com/Student/guided_project_workspace/42645]
 
 Developed as part of the Smart Bridge AI Internship Program.
