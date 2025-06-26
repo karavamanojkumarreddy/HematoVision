@@ -171,8 +171,9 @@ We welcome contributions to the HematoVision project! If you have suggestions or
 This project is licensed under the MIT License - see the LICENSE file for details (if you create one).
 
 📧 Contact
+# TEAM ID:LTVIP2025TMID43363
 # Project Lead: Karava Manoj Kumar Reddy
-# Team Members: Kolla Manikanta, Kulagiri Indu Priya and Karuturi Mahendranadh Chowdhury
+# Team Members: Kolla Manikanta, Kulagiri Indu Priya and Karuturi Mahendranadh Chowdhary
 # Email: karavamanojkumarreddy@gmail.com
 Smart Bridge Internship: [https://apsche.smartinternz.com/Student/guided_project_workspace/42645]
 
