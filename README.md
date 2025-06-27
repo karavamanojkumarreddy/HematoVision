@@ -175,6 +175,6 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 # Project Lead: Karava Manoj Kumar Reddy
 # Team Members: Kolla Manikanta, Kulagiri Indu Priya and Karuturi Mahendranadh Chowdhary
 # Email: karavamanojkumarreddy@gmail.com
-Smart Bridge Internship: [https://apsche.smartinternz.com/Student/guided_project_workspace/42645]
-
+# Smart Bridge Internship: [https://apsche.smartinternz.com/Student/guided_project_workspace/42645]
+# Demolink: https://youtu.be/ih1wb5PCL9Y?feature=shared 
 Developed as part of the Smart Bridge AI Internship Program.
